@@ -82,31 +82,24 @@
     </div>
     </header>
 <div class="bg-content">
+	
   <!--============================== content =================================-->
   <div id="content" class="content-extra"><div class="ic"></div>
     
-    <div class="row-1">
-      
-      <div class="container">   
-        
-      </div>
-
-    </div>
-    
-    <div class="container">
-      <article class="span8">
+  <div class="container">
+     <article class="span8">
         <div class="inner-1">         
-          <ul class="list-blog">
-		
-            {% for post in all_posts %}
-	       <li>  
-		 <h3>{{post.titulo}}</h3>     
-		 <div class="clear"></div>            
-		 <p>{{post.conteudo}}</p>
-		 <a href="#" class="btn btn-1">Leia mais</a>          
-               </li>
-	    {% endfor%}
-
+           <ul class="list-blog">
+	      
+	      {% for projeto in projetos %}
+	         <li>  
+		    <h3>{{projeto.titulo}}</h3>     
+		    <div class="clear"></div>            
+		    <pre>{{projeto.conteudo}}</pre>
+		    <a href="#" class="btn btn-1">Leia mais</a>          
+                 </li>
+	       {% endfor%}
+	       
           </ul>
         </div>  
       </article>
@@ -117,18 +110,18 @@
           <div class="inner-1 overflow extra">
             <div class="border-horiz"></div>
               <div class="overflow">
-                    <ul class="list list-pad">
-                      <li><a href="/">Home                        </a></li>
-                      <li><a href="/curriculo/">Currículo         </a></li>
-                      <li><a href="/deployedbyme/">Developed by me</a></li>
-                      <li><a href="http://www.gpzim98.tk">Blog    </a></li>
-                    </ul>
-                     <ul class="list">
-                       <li><a href="/projetos/"   >Projeto atuais </a></li>
-                       <li><a href="/curriculo/">Tecnologias      </a></li>
-                       <li><a href="/contato/"  >Contato          </a></li>
-                     </ul>
-                  </div>
+                <ul class="list list-pad">
+                  <li><a href="/">Home                         </a></li>
+                  <li><a href="/curriculo/">Currículo          </a></li>
+                  <li><a href="/developedbyme/">Developed by me</a></li>
+                  <li><a href="http://www.gpzim98.tk">Blog     </a></li>
+                </ul>
+                <ul class="list">
+                  <li><a href="/projetos/" >Projeto atuais </a></li>
+                  <li><a href="/curriculo/">Tecnologias    </a></li>
+                  <li><a href="/contato/"  >Contato        </a></li>
+                </ul>
+              </div>
             </div>
           </div>
       </div>

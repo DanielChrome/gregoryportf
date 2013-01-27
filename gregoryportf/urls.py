@@ -14,6 +14,9 @@ urlpatterns = patterns("",
   # url(r"^$", direct_to_template, {"template": "homepage.html", }, name="home"),
     url(r"^admin/", include(admin.site.urls)),
     url(r"^curriculo/$", "postagens.views.curriculo", name="curriculo"),
+    url(r"^deployedbyme/$", "postagens.views.deployedbyme", name="deployedbyme"),
+    url(r"^projetos/$", "postagens.views.projetos", name="projetos"),
+    url(r"^contato/$", "postagens.views.contato", name="contato"),
 )
 
 
@@ -21,3 +24,5 @@ if settings.SERVE_MEDIA:
     urlpatterns += patterns("",
         url(r"", include("staticfiles.urls")),
     )
+
+

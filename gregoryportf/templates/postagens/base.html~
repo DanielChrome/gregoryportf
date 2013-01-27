@@ -65,13 +65,13 @@
 		<div class="nav-collapse nav-collapse_  collapse">
 		      <ul class="nav sf-menu">
 			    <li class="active"><a href="/">Home</a></li>
-			    <li class="sub-menu"><a href="/curriculo/">Currículo</a>
+			    <li class="sub-menu"><a href="curriculo/">Currículo</a>
 				    <ul>
-					<li><a href="/deployedbyme/">Developed by me</a>  </li>
+					<li><a href="/developedme/">Developed by me</a>  </li>
 					<li><a href="/projetos/">Projetos atuais</a> </li>
 				    </ul>
 			    </li>
-			    <li><a href="http://www.gpzim98.tk">Blog</a></li>
+			    <li><a href="/base/">Blog</a></li>
 			    <li><a href="/contato/">Contacto        </a></li>
 		      </ul>
 		 </div>
@@ -82,13 +82,41 @@
     </div>
     </header>
 <div class="bg-content">
+	
   <!--============================== content =================================-->
   <div id="content" class="content-extra"><div class="ic"></div>
     
     <div class="row-1">
       
-      <div class="container">   
-        
+      <div class="container">
+	
+	{% block corpo %}
+        <!--<article class="span8">
+        <div class="inner-1">         
+          <ul class="list-blog">
+		
+            <li>  
+	       <h3>Titulo da publicação 1 do Artigo 1</h3>     
+	       <div class="clear"></div>            
+	       <p>Este é o conteúdo da publicação 1, Este é o conteúdo da publicação 1, Este é o conteúdo da publicação 1
+		  Este é o conteúdo da publicação 1, Este é o conteúdo da publicação 1, Este é o conteúdo da publicação 1
+	       </p>
+	       <a href="#" class="btn btn-1">Leia mais</a>          
+             </li>
+	    
+	    <li>  
+	       <h3>Titulo da publicação 2 do Artigo 1</h3>     
+	       <div class="clear"></div>            
+	       <p>Este é o conteúdo da publicação 1, Este é o conteúdo da publicação 1, Este é o conteúdo da publicação 1
+		  Este é o conteúdo da publicação 1, Este é o conteúdo da publicação 1, Este é o conteúdo da publicação 1
+	       </p>
+	       <a href="#" class="btn btn-1">Leia mais</a>          
+            </li>
+
+          </ul>
+        </div>  
+	</article>-->
+	{% endblock%}
       </div>
 
     </div>
@@ -97,7 +125,7 @@
       <article class="span8">
         <div class="inner-1">         
           <ul class="list-blog">
-		
+            
             {% for post in all_posts %}
 	       <li>  
 		 <h3>{{post.titulo}}</h3>     
@@ -117,18 +145,18 @@
           <div class="inner-1 overflow extra">
             <div class="border-horiz"></div>
               <div class="overflow">
-                    <ul class="list list-pad">
-                      <li><a href="/">Home                        </a></li>
-                      <li><a href="/curriculo/">Currículo         </a></li>
-                      <li><a href="/deployedbyme/">Developed by me</a></li>
-                      <li><a href="http://www.gpzim98.tk">Blog    </a></li>
-                    </ul>
-                     <ul class="list">
-                       <li><a href="/projetos/"   >Projeto atuais </a></li>
-                       <li><a href="/curriculo/">Tecnologias      </a></li>
-                       <li><a href="/contato/"  >Contato          </a></li>
-                     </ul>
-                  </div>
+                <ul class="list list-pad">
+                  <li><a href="/">Home                         </a></li>
+                  <li><a href="/curriculo/">Currículo          </a></li>
+                  <li><a href="/developedbyme/">Developed by me</a></li>
+                  <li><a href="http://www.gpzim98.tk">Blog     </a></li>
+                </ul>
+                <ul class="list">
+                  <li><a href="/projetos/" >Projeto atuais </a></li>
+                  <li><a href="/curriculo/">Tecnologias    </a></li>
+                  <li><a href="/contato/"  >Contato        </a></li>
+                </ul>
+              </div>
             </div>
           </div>
       </div>
