@@ -6,3 +6,7 @@ class Postagem(models.Model):
     titulo         = models.CharField(max_length = 255)
     datapublicacao = models.DateField()
     usuario        = models.ForeignKey(User)
+    conteudo       = models.TextField()
+
+    def __unicode__(self):
+    	return "%s" % (self.titulo)
