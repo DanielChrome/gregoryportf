@@ -9,7 +9,7 @@ def home(request):
     java     = Postagem.objects.get(titulo='Java')
     django   = Postagem.objects.get(titulo='Django Framework')
     android  = Postagem.objects.get(titulo='Android')
-    delphi   = Postagem.objects.get(titulo='Delphi')
+    delphi   = Postagem.objects.get(categoria = 5)
     gpzim    = Postagem.objects.get(titulo='Gregory Pacheco')
     return render(request, 'postagens/index.html', locals())
 
