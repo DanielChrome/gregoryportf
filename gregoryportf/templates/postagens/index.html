@@ -100,7 +100,7 @@
               <h2>Bem vindo</h2>
               <div>
             <p align="Justify">Analista de sistemas, Bacharel em Sistemas de Informação pela Faculdade Santo Agostinho de Montes Claros - MG, trabalho a mais de 2 anos com programador, e a mais  de 1 ano profissionalmente. Inicialmente na linguagem C, já passei pelo Pascal, C++ e C#, especializei-me em Java, passando a dominar alguns frameworks e API's como JPA, e Hibernate para ORM, JSF e Jswing para a construção de interfaces web e desktop respectivamente -- EJB3 e Spring Framework. No último ano iniciei os estudos no desenvolvimento para Android.
-Atualmente dedico me a maior parte do tempo em Python pois acabo de começara a trabalhar com o framework Django como freelancer, e também com o Delphi na grande empresa onde trabalho que é a ATS Informática.</p>
+                               Atualmente dedico me a maior parte do tempo em Python pois acabo de começara a trabalhar com o framework Django como freelancer, e também com o Delphi na grande empresa onde trabalho que é a ATS Informática.</p>
           </div>
             </div>
       </div>
@@ -115,42 +115,20 @@ Atualmente dedico me a maior parte do tempo em Python pois acabo de começara a 
         <div class="row">
             <!-- Lista de linguagens-->
            
-            <!-- Java-->
+            <!-- Resumos-->
             <ul class="thumbnails thumbnails-1">
-              <li class="span3">
-                <div class="thumbnail thumbnail-1">
-                  <h3>Java</h3>
-                  <img  src="/site_media/static/postagens/img/page2-java.jpg" alt="">
-                  <section><p align="Justify">Desenvolvimento desktop utilizando API Swing do Java, e para CRUD desde conexão JDBC até ORM's parrudos como JPA e Hibernate. MVC com Spring Framework.</p></section>
-                </div>
-              </li>
+              
+	      {% for resumo in resumos %}
+		<li class="span3">
+		  <div class="thumbnail thumbnail-1">
+		    <h3>{{resumo.titulo}}</h3>
+		    <img  src="/site_media/static/postagens/img/{{resumo.imagem}}" alt="">
+		    <section><p align="Justify">{{resumo.conteudo}}</p></section>
+		  </div>
+		</li>
+	      {% endfor %}
 
-              <!--Django-->
-              <li class="span3">
-                <div class="thumbnail thumbnail-1">
-                  <h3>Django Framework</h3>
-                  <img  src="/site_media/static/postagens/img/page3-django.jpg" alt="">
-                  <section><p align="Justify">Atualmente iniciei os estudos do Python para construção de sites e aplicações Web, utilizando o Django Framework, uma poderosa ferramenta RAD Web, de alta qualidade e velocidade no desenvolvimento. Largamente utilizada por grandes empresas como a globo.com.</p></section>
-                </div>
-              </li>
-
-               <!--Android-->
-              <li class="span3">
-                <div class="thumbnail thumbnail-1">
-                  <h3>Android</h3>
-                  <img  src="/site_media/static/postagens/img/page1-android.jpg" alt="">
-                  <section><p align="Justify">Desenvolvimento de aplicações para Android, foco principal em aplicações de controle e gestão. Com interfaces simples porém com alto grau de usabilidade.</p></section>
-                </div>
-              </li>
-
-              <!--Delphi-->
-              <li class="span3">
-                <div class="thumbnail thumbnail-1">
-                  <h3>Delphi</h3>
-                  <img  src="/site_media/static/postagens/img/page2-delphi.jpg" alt="">
-                  <section><p align="Justify">Sem dúvida o Delphi é uma das maiores IDE's/Linguagem de programação que já tivemos, hoje ela já não tem mais a mesma força que no passado, mas grande partes dos bons sistemas que ainda temos rodando foi construído com ela. Hoje desenvolvo também em Delphi na empresa onde trabalho atualmente.</p></section>
-                </div>
-              </li>
+              
 
             </ul>
           </div>
@@ -164,8 +142,7 @@ Atualmente dedico me a maior parte do tempo em Python pois acabo de começara a 
             <figure class="img-indent"><img src="/site_media/static/postagens/img/page1-img5.jpg" alt="" /></figure>
             <div class="inner-1 overflow extra">
               <div class="txt-1">"Purifica o teu coração antes de permitires que o amor entre nele, pois até o mel mais doce que há azeda num recipiente sujo."
-
---Mineiro legítimo, coração celeste e apaixonado por música e tecnologia.</div>
+                                  --Mineiro legítimo, coração celeste e apaixonado por música e tecnologia.</div>
                 <div class="border-horiz"></div>
                   <div class="overflow">
                     <ul class="list list-pad">

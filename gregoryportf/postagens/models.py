@@ -14,9 +14,10 @@ class Postagem(models.Model):
     usuario        = models.ForeignKey(User)
     conteudo       = models.TextField()
     categoria      = models.ForeignKey(Categoria)
+    imagem         = models.CharField(max_length = 50, null=True)
 
     def __unicode__(self):
-    	return "%s" % (self.titulo)
+    	return "%s - %s" % (self.titulo, self.categoria.nome)
     
 class Contato(models.Model):
     nome     = models.CharField(max_length = 100)

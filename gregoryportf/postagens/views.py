@@ -5,12 +5,13 @@ from django.template  import RequestContext
 
 # Create your views here.
 def home(request):
-    bemVindo = Postagem.objects.get(titulo='Bem vindo')
-    java     = Postagem.objects.get(titulo='Java')
-    django   = Postagem.objects.get(titulo='Django Framework')
-    android  = Postagem.objects.get(titulo='Android')
-    delphi   = Postagem.objects.get(categoria = 5)
-    gpzim    = Postagem.objects.get(titulo='Gregory Pacheco')
+    #bemVindo = Postagem.objects.get(titulo='Bem vindo')
+    #java     = Postagem.objects.get(titulo='Java')
+    #django   = Postagem.objects.get(titulo='Django Framework')
+    #android  = Postagem.objects.get(titulo='Android')
+    #delphi   = Postagem.objects.get(categoria = 5)
+    resumos   = Postagem.objects.all()
+    resumos   = resumos.filter(categoria = 6)
     return render(request, 'postagens/index.html', locals())
 
 def curriculo(request):
