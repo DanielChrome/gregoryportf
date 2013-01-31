@@ -8,19 +8,45 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
+        # Adding model 'Categoria'
+        db.create_table('postagens_categoria', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('nome', self.gf('django.db.models.fields.CharField')(max_length=255)),
+        ))
+        db.send_create_signal('postagens', ['Categoria'])
+
         # Adding model 'Postagem'
         db.create_table('postagens_postagem', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('titulo', self.gf('django.db.models.fields.CharField')(max_length=255)),
             ('datapublicacao', self.gf('django.db.models.fields.DateField')()),
             ('usuario', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'])),
+            ('conteudo', self.gf('django.db.models.fields.TextField')()),
+            ('categoria', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['postagens.Categoria'])),
+            ('imagem', self.gf('django.db.models.fields.CharField')(max_length=50, null=True)),
         ))
         db.send_create_signal('postagens', ['Postagem'])
 
+        # Adding model 'Contato'
+        db.create_table('postagens_contato', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('nome', self.gf('django.db.models.fields.CharField')(max_length=100)),
+            ('email', self.gf('django.db.models.fields.CharField')(max_length=100)),
+            ('telefone', self.gf('django.db.models.fields.CharField')(max_length=13)),
+            ('mensagem', self.gf('django.db.models.fields.TextField')()),
+        ))
+        db.send_create_signal('postagens', ['Contato'])
+
 
     def backwards(self, orm):
+        # Deleting model 'Categoria'
+        db.delete_table('postagens_categoria')
+
         # Deleting model 'Postagem'
         db.delete_table('postagens_postagem')
+
+        # Deleting model 'Contato'
+        db.delete_table('postagens_contato')
 
 
     models = {
@@ -60,10 +86,26 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
+        'postagens.categoria': {
+            'Meta': {'object_name': 'Categoria'},
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'nome': ('django.db.models.fields.CharField', [], {'max_length': '255'})
+        },
+        'postagens.contato': {
+            'Meta': {'object_name': 'Contato'},
+            'email': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'mensagem': ('django.db.models.fields.TextField', [], {}),
+            'nome': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'telefone': ('django.db.models.fields.CharField', [], {'max_length': '13'})
+        },
         'postagens.postagem': {
             'Meta': {'object_name': 'Postagem'},
+            'categoria': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['postagens.Categoria']"}),
+            'conteudo': ('django.db.models.fields.TextField', [], {}),
             'datapublicacao': ('django.db.models.fields.DateField', [], {}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'imagem': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True'}),
             'titulo': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'usuario': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']"})
         }
