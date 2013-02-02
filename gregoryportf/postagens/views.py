@@ -13,8 +13,6 @@ def curriculo(request):
     all_posts    = Postagem.objects.all()
     all_posts    = all_posts.filter(categoria = 2).order_by('pk')
     
-    projetos    = Postagem.objects.all()
-    projetos    = projetos.filter(categoria = 2).order_by('pk')
     return render(request, 'postagens/curriculo.html',locals())
     
 def deployedbyme(request):
