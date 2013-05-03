@@ -95,7 +95,7 @@
 	         <li>  
 		    <h3>{{projeto.titulo}}</h3>     
 		    <div class="clear"></div>            
-		    <p>{{projeto.conteudo}}</p>
+		    <p>{{projeto.conteudo|safe}}</p>
 		    <a href="#" class="btn btn-1">Leia mais</a>          
                  </li>
 	       {% endfor%}
