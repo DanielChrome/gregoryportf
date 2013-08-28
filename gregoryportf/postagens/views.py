@@ -5,8 +5,9 @@ from django.template  import RequestContext
 
 # Create your views here.
 def home(request):
-    resumos   = Postagem.objects.all()
-    resumos   = resumos.filter(categoria = 6)
+    resumos         = Postagem.objects.all()
+    resumos         = resumos.filter(categoria = 6)
+    bem_vindo_texto = Postagem.objects.get(id = 20)
     return render(request, 'postagens/index.html', locals())
 
 def curriculo(request):
@@ -17,7 +18,7 @@ def curriculo(request):
     
 def deployedbyme(request):
     projetos    = Postagem.objects.all()
-    projetos    = projetos.filter(categoria = 3).order_by('pk')
+    projetos    = projetos.filter(categoria = 3).order_by('-datapublicacao', '-id')
     return render(request, 'postagens/deployedbyme.html',locals())
     
 def projetos(request):
